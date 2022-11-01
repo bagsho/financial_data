@@ -3,11 +3,11 @@ library(tidyverse)
 
 # tq_get("NFLX",get="stock.prices")
 
-#sp_500 <- tq_index("SP500") %>%  tq_get(get="stock.prices")
-# sp_500 %>% saveRDS("data/sp_500.rds")
+#sp500 <- tq_index("SP500") %>%  tq_get(get="stock.prices")
+# sp500 %>% saveRDS("data/sp500.rds")
 
-sp_500 <- readRDS("data/sp_500.rds")
+sp500 <- readRDS("data/sp500.rds")
 
-results<- sp_500 %>% 
+results<- sp500 %>% 
   select(date,symbol,close) %>% 
   pivot_wider(names_from = symbol,values_from = close)
